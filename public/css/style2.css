@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    direction: rtl; /* عكس اتجاه النص ليكون باللغة العربية */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    padding: 15px 30px;
+    /* background-color: #1b2230; */
+    background-image: url('../logo/خلفية.jpg');
+    background-size: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo img {
+    width: 300px; /* ضبط حجم اللوجو */
+    height: auto;
+}
+
+.between img{
+    width: 300px;
+    height: auto;
+}
+
+.title-social {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* إضافة مسافة بين كلمة المدونة وأيقونات وسائل التواصل */
+}
+
+.title-social h1 {
+    font-size: 28px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px; /* إضافة مسافات بين أيقونات وسائل التواصل */
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px; /* حجم الأيقونات */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+.banner {
+    position: relative;
+    margin-top: -5px;
+    width: 100%;
+    height: auto;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right; /* لضمان ظهور وجه الشخص في الجهة اليمنى من البنر */
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner-text img {
+    width: 600px;
+    height: auto;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        height: auto; /* تكييف الارتفاع */
+    }
+
+    .logo {
+        order: -2; /* وضع اللوجو في البداية */
+    }
+
+    .logo img {
+        width: 200px; /* تقليص حجم اللوجو للشاشات الصغيرة */
+    }
+
+    .between{
+        order: -1;
+    }
+
+    .between img {
+        width: 150px;
+         /* تعديل حجم المخطوطة للشاشات الصغيرة */
+    }
+
+    .title-social h1 {
+        margin-bottom: 5px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .banner {
+        height: 300px; /* تقليل ارتفاع البنر على الشاشات الصغيرة */
+    }
+
+    .banner img {
+        object-position: center right; /* الحفاظ على ظهور وجه الشخص في الشاشات الصغيرة */
+    }
+
+    .banner-text img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+        height: auto; /* جعل الارتفاع تلقائي */
+    }
+
+    .logo img {
+        width: 150px; /* تقليص أكبر لحجم اللوجو */
+    }
+
+    .between img {
+        width: 100px; /* تقليص أكبر للمخطوطة */
+    }
+
+    .social-icons a {
+        font-size: 20px; /* تقليص حجم الأيقونات */
+    }
+
+    .banner {
+        height: 250px;
+    }
+
+    .banner img {
+        object-position: center right; /* تعديل مناسب لشاشات الهواتف */
+    }
+
+    .banner-text img {
+        width: 200px;
+    }
+}
+.news-section {
+    position: relative;
+    text-align: center;
+    margin: 50px;
+    padding: 10px;
+}
+
+.news-section h2 {
+    background-color: red;
+    color: white;
+    font-size: 32px;
+    padding: 10px;
+    display: inline-block;
+    margin: 0;
+    position: absolute;
+    top: -30px; /* لضبط الموقع أسفل زاوية البنر */
+    right: 20px; /* لضبط الموقع من اليمين */
+}
+
+.news-ticker {
+    margin-top: 40px; /* لإضافة مسافة بعد كلمة الأخبار */
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.news-ticker p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 10s linear infinite;
+    font-size: 18px;
+    color: #1b2230;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
